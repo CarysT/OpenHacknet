@@ -220,3 +220,6 @@ _Pvt_Extensions
 
 # Steamworks.NET DLL
 lib/
+
+# Game Content
+Content/

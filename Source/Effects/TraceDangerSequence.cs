@@ -116,7 +116,7 @@ namespace Hacknet.Effects
                         timeThisState = 0.0f;
                         state = TraceDangerState.Gameover;
                         CancelTraceDangerSequence();
-                        Game1.getSingleton().Exit();
+                        Game1.GetSingleton().Exit();
                     }
                     if ((os.timer - (double) onBeatFlashTimer)%1.93766665458679 < 0.0500000007450581)
                         os.warningFlash();

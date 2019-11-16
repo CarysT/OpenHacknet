@@ -17,15 +17,15 @@ namespace Hacknet
         public static Color Default_Selected_Color = new Color(0, 166, 235);
         public static Color Default_Unselected_Color = new Color(byte.MaxValue, 128, 0);
         public static Color Default_Backing_Color = new Color(30, 30, 50, 100);
-        public static Color Default_Light_Backing_Color = new Color(80, 80, 100, byte.MaxValue);
-        public static Color Default_Lit_Backing_Color = new Color(byte.MaxValue, 199, 41, 100);
+        public static Color Default_Light_Backing_Color = new Color((byte)80, (byte)80, (byte)100, byte.MaxValue);
+        public static Color Default_Lit_Backing_Color = new Color(byte.MaxValue, (byte)199, (byte)41, (byte)100);
         public static Color Default_Dark_Neutral_Color = new Color(10, 10, 15, 200);
         public static Color Default_Dark_Background_Color = new Color(40, 40, 45, 180);
         public static Color Default_Trans_Grey = new Color(30, 30, 30, 100);
         public static Color Default_Trans_Grey_Bright = new Color(60, 60, 60, 100);
         public static Color Default_Trans_Grey_Dark = new Color(20, 20, 20, 200);
         public static Color Default_Trans_Grey_Strong = new Color(80, 80, 80, 100);
-        public static Color Default_Trans_Grey_Solid = new Color(100, 100, 100, byte.MaxValue);
+        public static Color Default_Trans_Grey_Solid = new Color((byte)100, (byte)100, (byte)100, byte.MaxValue);
         public static int lastMouseWheelPos = -1;
         private static int lastMouseScroll;
         public static int hot = -1;

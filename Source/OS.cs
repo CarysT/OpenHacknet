@@ -32,7 +32,6 @@ namespace Hacknet
         public static float operationProgress = 0.0f;
         public static object displayObjectCache = null;
         public static OS currentInstance;
-        private readonly AudioVisualizer audioVisualizer = new AudioVisualizer();
         private readonly TcpClient client;
         private readonly ASCIIEncoding encoder;
         private readonly byte[] inBuffer;
@@ -66,7 +65,7 @@ namespace Hacknet
         public ActiveMission currentMission;
         public int currentPID;
         public Color darkBackgroundColor = new Color(8, 8, 8);
-        public Color defaultHighlightColor = new Color(0, 139, 199, byte.MaxValue);
+        public Color defaultHighlightColor = new Color((byte)0, (byte)139, (byte)199, byte.MaxValue);
         public Color defaultTopBarColor = new Color(130, 65, 27);
         public UserDetail defaultUser;
         public ActionDelayer delayer;
@@ -85,7 +84,7 @@ namespace Hacknet
         public Rectangle fullscreen;
         public float gameSavedTextAlpha = -1f;
         public string getStringCache = "";
-        public Color highlightColor = new Color(0, 139, 199, byte.MaxValue);
+        public Color highlightColor = new Color((byte)0, (byte)139, (byte)199, byte.MaxValue);
         public string homeAssetServerID = "entropy01";
         public string homeNodeID = "entropy00";
         public IncomingConnectionOverlay IncConnectionOverlay;
@@ -102,8 +101,8 @@ namespace Hacknet
         public Color lockedColor = new Color(65, 16, 16, 200);
         public MailIcon mailicon;
         public Color moduleColorBacking = new Color(5, 6, 7, 10);
-        public Color moduleColorSolid = new Color(50, 59, 90, byte.MaxValue);
-        public Color moduleColorSolidDefault = new Color(50, 59, 90, byte.MaxValue);
+        public Color moduleColorSolid = new Color((byte)50, (byte)59, (byte)90, byte.MaxValue);
+        public Color moduleColorSolidDefault = new Color((byte)50, (byte)59, (byte)90, byte.MaxValue);
         public Color moduleColorStrong = new Color(14, 28, 40, 80);
         private List<Module> modules;
         public bool multiplayer;
@@ -111,7 +110,7 @@ namespace Hacknet
         public List<int> navigationPath = new List<int>();
         public NetworkMap netMap;
         public Color netmapToolTipBackground = new Color(0, 0, 0, 150);
-        public Color netmapToolTipColor = new Color(213, 245, byte.MaxValue, 0);
+        public Color netmapToolTipColor = new Color((byte)213, (byte)245, byte.MaxValue, (byte)0);
         public Computer opponentComputer;
         public string opponentLocation = "";
         private byte[] outBuffer;
@@ -123,7 +122,7 @@ namespace Hacknet
         private Texture2D saveIcon;
         public string SaveUserAccountName;
         private Texture2D scanLines;
-        public Color scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+        public Color scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)15);
         public Color semiTransText = new Color(120, 120, 120, 0);
         public Color shellButtonColor = new Color(105, 167, 188);
         public Color shellColor = new Color(222, 201, 24);
@@ -139,7 +138,7 @@ namespace Hacknet
         public Color thisComputerNode = new Color(95, 220, 83);
         public float timer;
         private Rectangle topBar;
-        public Color topBarColor = new Color(0, 139, 199, byte.MaxValue);
+        public Color topBarColor = new Color((byte)0, (byte)139, (byte)199, byte.MaxValue);
         public Color topBarIconsColor = Color.White;
         public Color topBarTextColor = new Color(126, 126, 126, 100);
         public int totalRam = 800 - (TOP_BAR_HEIGHT + 2) - RamModule.contentStartOffset;
@@ -665,10 +664,6 @@ namespace Hacknet
             if (!multiplayer && !DisableTopBarButtons)
                 mailicon.Draw();
             var num1 = ram.bounds.Height + topBar.Height + 16;
-            if (num1 < fullscreen.Height && ram.visible)
-                audioVisualizer.Draw(
-                    new Rectangle(ram.bounds.X, num1 + 1, ram.bounds.Width - 2, fullscreen.Height - num1 - 4),
-                    GuiData.spriteBatch);
             for (var index = 0; index < modules.Count; ++index)
             {
                 if (modules[index].visible)
@@ -697,7 +692,7 @@ namespace Hacknet
 
         public void quitGame(object sender, PlayerIndexEventArgs e)
         {
-            Game1.getSingleton().Exit();
+            Game1.GetSingleton().Exit();
         }
 
         public override void Draw(GameTime gameTime)
@@ -960,7 +955,7 @@ namespace Hacknet
 
         public void setMouseVisiblity(bool mouseIsVisible)
         {
-            delayer.Post(ActionDelayer.NextTick(), () => Game1.getSingleton().IsMouseVisible = mouseIsVisible);
+            delayer.Post(ActionDelayer.NextTick(), () => Game1.GetSingleton().IsMouseVisible = mouseIsVisible);
         }
 
         public void loadBranchMissionsSaveData(XmlReader reader)

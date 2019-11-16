@@ -85,7 +85,7 @@ namespace Hacknet
             ScreenManager.FadeBackBufferToBlack(Math.Min(TransitionAlpha, (byte) 140));
             var viewport = ScreenManager.GraphicsDevice.Viewport;
             var position = new Vector2(viewport.Width, viewport.Height)/2f - spriteFont.MeasureString(message)/2f;
-            var color = new Color(22, 22, 22, byte.MaxValue);
+            var color = new Color((byte)22, (byte)22, (byte)22, byte.MaxValue);
             double num = TransitionPosition;
             if (ScreenState == ScreenState.TransitionOff)
                 return;

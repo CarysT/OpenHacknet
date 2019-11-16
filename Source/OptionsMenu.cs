@@ -86,7 +86,7 @@ namespace Hacknet
 
         public bool getIfWindowed()
         {
-            return Game1.getSingleton().graphics.IsFullScreen;
+            return Game1.GetSingleton().graphics.IsFullScreen;
         }
 
         public void apply()
@@ -94,7 +94,7 @@ namespace Hacknet
             var flag = false;
             if (windowed != getIfWindowed())
             {
-                Game1.getSingleton().graphics.ToggleFullScreen();
+                Game1.GetSingleton().graphics.ToggleFullScreen();
                 Settings.windowed = getIfWindowed();
                 flag = true;
             }
@@ -103,14 +103,14 @@ namespace Hacknet
                 var strArray = resolutions[currentResIndex].Split(xArray);
                 var num1 = Convert.ToInt32(strArray[0]);
                 var num2 = Convert.ToInt32(strArray[1]);
-                Game1.getSingleton().graphics.PreferredBackBufferWidth = num1;
-                Game1.getSingleton().graphics.PreferredBackBufferHeight = num2;
+                Game1.GetSingleton().graphics.PreferredBackBufferWidth = num1;
+                Game1.GetSingleton().graphics.PreferredBackBufferHeight = num2;
             }
             GuiData.ActivateFontConfig(fontConfigs[currentFontIndex]);
             if (resolutionChanged || flag)
             {
-                Game1.getSingleton().graphics.ApplyChanges();
-                Game1.getSingleton().setNewGraphics();
+                Game1.GetSingleton().graphics.ApplyChanges();
+                Game1.GetSingleton().SetNewGraphics();
             }
             else
                 ExitScreen();
@@ -138,7 +138,7 @@ namespace Hacknet
             if (!Settings.debugCommandsEnabled || !Utils.keyPressed(input, Keys.F8, new PlayerIndex?()))
                 return;
             ExitScreen();
-            Game1.getSingleton().Exit();
+            Game1.GetSingleton().Exit();
         }
 
         public override void Draw(GameTime gameTime)

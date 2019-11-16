@@ -10,7 +10,7 @@ namespace Hacknet
         public static float DURATION = 12f;
         public static float BAR_MOVEMENT = 30f;
         public static float BAR_HEIGHT = 2f;
-        private readonly Color activeBarColor = new Color(34, 82, 64, byte.MaxValue);
+        private readonly Color activeBarColor = new Color((byte)34, (byte)82, (byte)64, byte.MaxValue);
         private readonly Color activeBarHighlightColor = new Color(0, 186, 99, 0);
         private float barSize;
         private int completedIndex;

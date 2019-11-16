@@ -19,9 +19,9 @@ namespace Hacknet.Effects
                 os = (OS) os_Obj;
             else
                 internalTimer += 0.01666667f;
-            var color1 = new Color(BaseCol.R, 0, 0, 0);
-            var color2 = new Color(0, BaseCol.G, 0, 0);
-            var color3 = new Color(0, 0, BaseCol.B, 0);
+            var color1 = new Color(BaseCol.R, (byte)0, (byte)0, (byte)0);
+            var color2 = new Color((byte)0, BaseCol.G, (byte)0, (byte)0);
+            var color3 = new Color((byte)0, (byte)0, BaseCol.B, (byte)0);
             TextItem.doFontLabelToSize(
                 RectAddX(dest, (int) (maxOffset*(double) GetOffsetForSinTime(1.3f, 12.3f, rarity, os))), text, font,
                 color1);
@@ -90,9 +90,9 @@ namespace Hacknet.Effects
                 os = (OS) os_Obj;
             else
                 internalTimer += 0.01666667f;
-            var color1 = new Color(BaseCol.R, 0, 0, 0);
-            var color2 = new Color(0, BaseCol.G, 0, 0);
-            var color3 = new Color(0, 0, BaseCol.B, 0);
+            var color1 = new Color(BaseCol.R, (byte)0, (byte)0, (byte)0);
+            var color2 = new Color((byte)0, BaseCol.G, (byte)0, (byte)0);
+            var color3 = new Color((byte)0, (byte)0, BaseCol.B, (byte)0);
             sb.Draw(texture, RectAddX(dest, (int) (maxOffset*(double) GetOffsetForSinTime(1.3f, 12.3f, rarity, os))),
                 color1);
             sb.Draw(texture, RectAddX(dest, (int) (maxOffset*(double) GetOffsetForSinTime(0.8f, 29f, rarity, os))),
@@ -109,9 +109,9 @@ namespace Hacknet.Effects
                 os = (OS) os_Obj;
             else
                 internalTimer += 0.01666667f;
-            var color1 = new Color(BaseCol.R, 0, 0, 0);
-            var color2 = new Color(0, BaseCol.G, 0, 0);
-            var color3 = new Color(0, 0, BaseCol.B, 0);
+            var color1 = new Color(BaseCol.R, (byte)0, (byte)0, (byte)0);
+            var color2 = new Color((byte)0, BaseCol.G, (byte)0, (byte)0);
+            var color3 = new Color((byte)0, (byte)0, BaseCol.B, (byte)0);
             sb.Draw(texture, RectAddX(dest, (int) (maxOffset*(double) GetOffsetForSinTime(4f, 0.0f, rarity, os))),
                 color1);
             sb.Draw(texture, RectAddX(dest, (int) (maxOffset*(double) GetOffsetForSinTime(2f, 2f, rarity, os))), color2);

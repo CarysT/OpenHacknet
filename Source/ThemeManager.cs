@@ -177,7 +177,7 @@ namespace Hacknet
                     os.exeModuleTitleText = color;
                     break;
                 case OSTheme.HacknetBlue:
-                    os.defaultHighlightColor = new Color(0, 139, 199, byte.MaxValue);
+                    os.defaultHighlightColor = new Color((byte)0, (byte)139, (byte)199, byte.MaxValue);
                     os.defaultTopBarColor = new Color(130, 65, 27);
                     os.warningColor = Color.Red;
                     os.highlightColor = os.defaultHighlightColor;
@@ -192,8 +192,8 @@ namespace Hacknet
                     os.lightGray = new Color(180, 180, 180);
                     os.shellColor = new Color(222, 201, 24);
                     os.shellButtonColor = new Color(105, 167, 188);
-                    os.moduleColorSolid = new Color(50, 59, 90, byte.MaxValue);
-                    os.moduleColorSolidDefault = new Color(50, 59, 90, byte.MaxValue);
+                    os.moduleColorSolid = new Color((byte)50, (byte)59, (byte)90, byte.MaxValue);
+                    os.moduleColorSolidDefault = new Color((byte)50, (byte)59, (byte)90, byte.MaxValue);
                     os.moduleColorStrong = new Color(14, 28, 40, 80);
                     os.moduleColorBacking = new Color(5, 6, 7, 10);
                     os.topBarColor = os.defaultTopBarColor;
@@ -204,14 +204,14 @@ namespace Hacknet
                     os.connectedNodeHighlight = new Color(222, 0, 0, 195);
                     os.exeModuleTopBar = new Color(130, 65, 27, 80);
                     os.exeModuleTitleText = new Color(155, 85, 37, 0);
-                    os.netmapToolTipColor = new Color(213, 245, byte.MaxValue, 0);
+                    os.netmapToolTipColor = new Color((byte)213, (byte)245, byte.MaxValue, (byte)0);
                     os.netmapToolTipBackground = new Color(0, 0, 0, 70);
                     os.topBarIconsColor = Color.White;
                     os.thisComputerNode = new Color(95, 220, 83);
-                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)15);
                     break;
                 case OSTheme.HacknetTeal:
-                    os.defaultHighlightColor = new Color(59, 134, 134, byte.MaxValue);
+                    os.defaultHighlightColor = new Color((byte)59, (byte)134, (byte)134, byte.MaxValue);
                     os.defaultTopBarColor = new Color(11, 72, 107);
                     os.warningColor = Color.Red;
                     os.highlightColor = os.defaultHighlightColor;
@@ -238,14 +238,14 @@ namespace Hacknet
                     os.connectedNodeHighlight = new Color(222, 0, 0, 195);
                     os.exeModuleTopBar = new Color(12, 33, 33, 80);
                     os.exeModuleTitleText = new Color(11, 72, 107, 0);
-                    os.netmapToolTipColor = new Color(213, 245, byte.MaxValue, 0);
+                    os.netmapToolTipColor = new Color((byte)213, (byte)245, byte.MaxValue, (byte)0);
                     os.netmapToolTipBackground = new Color(0, 0, 0, 70);
                     os.topBarIconsColor = Color.White;
                     os.thisComputerNode = new Color(95, 220, 83);
-                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)15);
                     break;
                 case OSTheme.HacknetYellow:
-                    os.defaultHighlightColor = new Color(186, 98, 9, byte.MaxValue);
+                    os.defaultHighlightColor = new Color((byte)186, (byte)98, (byte)9, byte.MaxValue);
                     os.defaultTopBarColor = new Color(89, 48, 6);
                     os.highlightColor = os.defaultHighlightColor;
                     os.shellColor = new Color(60, 107, 85);
@@ -274,7 +274,7 @@ namespace Hacknet
                     os.topBarIconsColor = Color.White;
                     break;
                 case OSTheme.HacknetWhite:
-                    os.defaultHighlightColor = new Color(185, 219, byte.MaxValue, byte.MaxValue);
+                    os.defaultHighlightColor = new Color((byte)185, (byte)219, byte.MaxValue, byte.MaxValue);
                     os.defaultTopBarColor = new Color(20, 20, 20);
                     os.highlightColor = os.defaultHighlightColor;
                     os.shellColor = new Color(156, 185, 190);
@@ -294,26 +294,26 @@ namespace Hacknet
                     os.defaultTopBarColor = new Color(0, 0, 0, 60);
                     os.highlightColor = os.defaultHighlightColor;
                     os.highlightColor = os.defaultHighlightColor;
-                    os.moduleColorSolid = new Color(154, 119, 189, byte.MaxValue);
-                    os.moduleColorSolidDefault = new Color(154, 119, 189, byte.MaxValue);
+                    os.moduleColorSolid = new Color((byte)154, (byte)119, (byte)189, byte.MaxValue);
+                    os.moduleColorSolidDefault = new Color((byte)154, (byte)119, (byte)189, byte.MaxValue);
                     os.moduleColorStrong = new Color(27, 14, 40, 80);
                     os.moduleColorBacking = new Color(6, 5, 7, 205);
                     os.topBarColor = os.defaultTopBarColor;
                     os.exeModuleTopBar = new Color(32, 22, 40, 80);
                     os.exeModuleTitleText = new Color(91, 132, 207, 0);
-                    os.netmapToolTipColor = new Color(213, 245, byte.MaxValue, 0);
+                    os.netmapToolTipColor = new Color((byte)213, (byte)245, byte.MaxValue, (byte)0);
                     os.netmapToolTipBackground = new Color(0, 0, 0, 70);
                     os.displayModuleExtraLayerBackingColor = new Color(0, 0, 0, 60);
                     os.thisComputerNode = new Color(95, 220, 83);
-                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)15);
                     break;
                 case OSTheme.HacknetMint:
                     os.defaultHighlightColor = new Color(35, 158, 121);
                     os.defaultTopBarColor = new Color(0, 0, 0, 40);
                     os.topBarColor = os.defaultTopBarColor;
                     os.highlightColor = os.defaultHighlightColor;
-                    os.moduleColorSolid = new Color(150, 150, 150, byte.MaxValue);
-                    os.moduleColorSolidDefault = new Color(150, 150, 150, byte.MaxValue);
+                    os.moduleColorSolid = new Color((byte)150, (byte)150, (byte)150, byte.MaxValue);
+                    os.moduleColorSolidDefault = new Color((byte)150, (byte)150, (byte)150, byte.MaxValue);
                     os.moduleColorStrong = new Color(43, 43, 43, 80);
                     os.moduleColorBacking = new Color(6, 6, 6, 145);
                     os.displayModuleExtraLayerBackingColor = new Color(0, 0, 0, 70);
@@ -321,7 +321,7 @@ namespace Hacknet
                     os.topBarIconsColor = new Color(49, 224, 172);
                     os.exeModuleTopBar = new Color(20, 20, 20, 80);
                     os.exeModuleTitleText = new Color(49, 224, 172, 0);
-                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+                    os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)15);
                     break;
             }
         }
@@ -333,19 +333,19 @@ namespace Hacknet
                 case OSTheme.TerminalOnlyBlack:
                     return Utils.VeryDarkGray;
                 case OSTheme.HacknetTeal:
-                    return new Color(59, 134, 134, byte.MaxValue);
+                    return new Color((byte)59, (byte)134, (byte)134, byte.MaxValue);
                 case OSTheme.HacknetYellow:
-                    return new Color(186, 98, 9, byte.MaxValue);
+                    return new Color((byte)186, (byte)98, (byte)9, byte.MaxValue);
                 case OSTheme.HackerGreen:
                     return new Color(135, 222, 109, 200);
                 case OSTheme.HacknetWhite:
-                    return new Color(185, 219, byte.MaxValue, byte.MaxValue);
+                    return new Color((byte)185, (byte)219, byte.MaxValue, byte.MaxValue);
                 case OSTheme.HacknetPurple:
-                    return new Color(111, 89, 171, byte.MaxValue);
+                    return new Color((byte)111, (byte)89, (byte)171, byte.MaxValue);
                 case OSTheme.HacknetMint:
                     return new Color(35, 158, 121);
                 default:
-                    return new Color(0, 139, 199, byte.MaxValue);
+                    return new Color((byte)0, (byte)139, (byte)199, byte.MaxValue);
             }
         }
 
@@ -354,7 +354,7 @@ namespace Hacknet
             switch (currentTheme)
             {
                 case OSTheme.HacknetYellow:
-                    sb.Draw(Utils.white, area, new Color(51, 38, 0, byte.MaxValue));
+                    sb.Draw(Utils.white, area, new Color((byte)51, (byte)38, (byte)0, byte.MaxValue));
                     var dest = new Rectangle(area.X - 30, area.Y - 20, area.Width + 60, area.Height + 40);
                     hexGrid.Draw(dest, sb, Color.Transparent, new Color(byte.MaxValue, 217, 105)*0.2f,
                         HexGridBackground.ColoringAlgorithm.CorrectedSinWash, 0.0f);

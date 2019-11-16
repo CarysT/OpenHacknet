@@ -16,7 +16,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 
 namespace Hacknet
 {
@@ -29,8 +28,8 @@ namespace Hacknet
         public static readonly string LevelStateFilename = "LevelState.lst";
         public static Color VeryDarkGray = new Color(22, 22, 22);
         public static Color SlightlyDarkGray = new Color(100, 100, 100);
-        public static Color AddativeWhite = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 0);
-        public static Color AddativeRed = new Color(byte.MaxValue, 15, 15, 0);
+        public static Color AddativeWhite = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)0);
+        public static Color AddativeRed = new Color(byte.MaxValue, (byte)15, (byte)15, (byte)0);
         private static HSLColor hslColor = new HSLColor(1f, 1f, 1f);
 
         public static char[] newlineDelim = new char[1]
@@ -69,7 +68,6 @@ namespace Hacknet
         public static Texture2D gradientLeftRight;
         public static AudioEmitter emitter;
         public static Vector3 vec3;
-        public static StorageDevice device;
         public static Color col;
 
         public static CollidableRectangle sect(CollidableRectangle first, CollidableRectangle second)
@@ -833,12 +831,11 @@ namespace Hacknet
                     white.IsDisposed + "\r\n SmallFont:" + GuiData.smallfont + "\r\n TinyFont:" +
                     GuiData.tinyfont + "\r\n LineEffectTarget:" + FlickeringTextEffect.GetReportString() +
                     "\r\n PostProcessort stuff:" + PostProcessor.GetStatusReportString(), "\r\nRESOLUTION:\r\n ",
-                    Game1.getSingleton().GraphicsDevice.PresentationParameters.BackBufferWidth, "x") +
-                Game1.getSingleton().GraphicsDevice.PresentationParameters.BackBufferHeight + "\r\nFullscreen: " +
-                (Game1.getSingleton().graphics.IsFullScreen ? "true" : "false") + "\r\n Adapter: " +
-                Game1.getSingleton().GraphicsDevice.Adapter.Description + "\r\n Device Name: " +
-                Game1.getSingleton().GraphicsDevice.Adapter.DeviceName + "\r\n Status: " +
-                Game1.getSingleton().GraphicsDevice.GraphicsDeviceStatus + "\r\n Extra:\r\n" + extraData + "\r\n";
+                    Game1.GetSingleton().GraphicsDevice.PresentationParameters.BackBufferWidth, "x") +
+                Game1.GetSingleton().GraphicsDevice.PresentationParameters.BackBufferHeight + "\r\nFullscreen: " +
+                (Game1.GetSingleton().graphics.IsFullScreen ? "true" : "false") + "\r\n Adapter: " +
+                Game1.GetSingleton().GraphicsDevice.Adapter.Description + "\r\n Device Name: " +
+                Game1.GetSingleton().GraphicsDevice.GraphicsDeviceStatus + "\r\n Extra:\r\n" + extraData + "\r\n";
             SendRealWorldEmail(
                 "Hackent " + postfix + MainMenu.OSVersion + " Crash " + DateTime.Now.ToShortDateString() + " " +
                 DateTime.Now.ToShortTimeString(), "hacknetbugs+Hacknet@gmail.com", body);

@@ -20,7 +20,6 @@ namespace Hacknet
         public GraphicsDeviceInformation graphicsInfo;
         private readonly EventHandler<PreparingDeviceSettingsEventArgs> graphicsPreparedHandler;
         private bool HasLoadedContent;
-        private bool IsDrawing;
         private bool resolutionSet = true;
         private ScreenManager sman;
         private SpriteBatch spriteBatch;
@@ -31,12 +30,14 @@ namespace Hacknet
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
             threadsExiting = false;
-            graphics = new GraphicsDeviceManager(this);
-            graphics.GraphicsProfile = GraphicsProfile.HiDef;
-            graphics.PreferMultiSampling = true;
-            graphics.DeviceDisposing += graphics_DeviceDisposing;
-            graphics.DeviceResetting += graphics_DeviceResetting;
-            graphics.DeviceReset += graphics_DeviceReset;
+            graphics = new GraphicsDeviceManager(this)
+            {
+                GraphicsProfile = GraphicsProfile.HiDef,
+                PreferMultiSampling = true
+            };
+            graphics.DeviceDisposing += Graphics_DeviceDisposing;
+            graphics.DeviceResetting += Graphics_DeviceResetting;
+            graphics.DeviceReset += Graphics_DeviceReset;
             SettingsLoader.checkStatus();
             if (SettingsLoader.didLoad)
             {
@@ -53,7 +54,7 @@ namespace Hacknet
             }
             else
             {
-                graphicsPreparedHandler = graphics_PreparingDeviceSettings;
+                graphicsPreparedHandler = Graphics_PreparingDeviceSettings;
                 graphics.PreparingDeviceSettings += graphicsPreparedHandler;
                 graphics.PreferredBackBufferWidth = 1280;
                 graphics.PreferredBackBufferHeight = 800;
@@ -63,12 +64,12 @@ namespace Hacknet
             IsFixedTimeStep = false;
             Content.RootDirectory = "Content";
             singleton = this;
-            Exiting += handleExit;
+            Exiting += HandleExit;
             PlatformAPISettings.InitPlatformAPI();
             StatsManager.InitStats();
         }
 
-        private void graphics_DeviceReset(object sender, EventArgs e)
+        private void Graphics_DeviceReset(object sender, EventArgs e)
         {
             Program.GraphicsDeviceResetLog = Program.GraphicsDeviceResetLog + "Reset at " +
                                              DateTime.Now.ToShortTimeString();
@@ -79,17 +80,17 @@ namespace Hacknet
             HasLoadedContent = true;
         }
 
-        private void graphics_DeviceResetting(object sender, EventArgs e)
+        private void Graphics_DeviceResetting(object sender, EventArgs e)
         {
             HasLoadedContent = false;
         }
 
-        private void graphics_DeviceDisposing(object sender, EventArgs e)
+        private void Graphics_DeviceDisposing(object sender, EventArgs e)
         {
             HasLoadedContent = false;
         }
 
-        private void graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
+        private void Graphics_PreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
         {
             var currentDisplayMode = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
             var width = currentDisplayMode.Width;
@@ -102,7 +103,7 @@ namespace Hacknet
             CanLoadContent = true;
         }
 
-        public void setNewGraphics()
+        public void SetNewGraphics()
         {
             graphics.ApplyChanges();
             var screens = sman.GetScreens();
@@ -111,8 +112,7 @@ namespace Hacknet
             string str2 = null;
             for (var index = 0; index < screens.Length; ++index)
             {
-                var os = screens[index] as OS;
-                if (os != null)
+                if (screens[index] is OS os)
                 {
                     os.threadedSaveExecute();
                     flag = true;
@@ -128,9 +128,11 @@ namespace Hacknet
             if (flag)
             {
                 OS.WillLoadSave = true;
-                var os = new OS();
-                os.SaveGameUserName = str1;
-                os.SaveUserAccountName = str2;
+                var os = new OS
+                {
+                    SaveGameUserName = str1,
+                    SaveUserAccountName = str2
+                };
                 MainMenu.resetOS();
                 sman.AddScreen(os, sman.controllingPlayer);
             }
@@ -140,7 +142,7 @@ namespace Hacknet
             LoadInitialScreens();
         }
 
-        public void setWindowPosition(Vector2 pos)
+        public void SetWindowPosition()
         {
             if (SettingsLoader.isFullscreen)
                 return;
@@ -163,7 +165,7 @@ namespace Hacknet
             base.Initialize();
         }
 
-        private void handleExit(object sender, EventArgs e)
+        private void HandleExit(object sender, EventArgs e)
         {
             threadsExiting = true;
             MusicManager.stop();
@@ -189,7 +191,7 @@ namespace Hacknet
             PortExploits.populate();
             sman.controllingPlayer = PlayerIndex.One;
             if (Settings.isConventionDemo)
-                setWindowPosition(new Vector2(200f, 200f));
+                SetWindowPosition();
             LoadGraphicsContent();
             LoadRegenSafeContent();
             var content = Content;
@@ -249,7 +251,7 @@ namespace Hacknet
                 LoadContent();
             if (!resolutionSet)
             {
-                setNewGraphics();
+                SetNewGraphics();
                 resolutionSet = true;
             }
             PatternDrawer.update((float) gameTime.ElapsedGameTime.TotalSeconds);
@@ -263,12 +265,10 @@ namespace Hacknet
         {
             if (!HasLoadedContent)
                 return;
-            IsDrawing = true;
             base.Draw(gameTime);
-            IsDrawing = false;
         }
 
-        public static Game1 getSingleton()
+        public static Game1 GetSingleton()
         {
             return singleton;
         }

@@ -269,12 +269,11 @@ namespace Hacknet
                         "\r\n SmallFont:" + GuiData.smallfont + "\r\n TinyFont:" + GuiData.tinyfont +
                         "\r\n LineEffectTarget:" + FlickeringTextEffect.GetReportString() + "\r\n PostProcessort stuff:" +
                         PostProcessor.GetStatusReportString(), "\r\nRESOLUTION:\r\n ",
-                        Game1.getSingleton().GraphicsDevice.PresentationParameters.BackBufferWidth, "x") +
-                    Game1.getSingleton().GraphicsDevice.PresentationParameters.BackBufferHeight + "\r\nFullscreen: " +
-                    (Game1.getSingleton().graphics.IsFullScreen ? "true" : "false") + "\r\n Adapter: " +
-                    Game1.getSingleton().GraphicsDevice.Adapter.Description + "\r\n Device Name: " +
-                    Game1.getSingleton().GraphicsDevice.Adapter.DeviceName + "\r\n Status: " +
-                    Game1.getSingleton().GraphicsDevice.GraphicsDeviceStatus;
+                        Game1.GetSingleton().GraphicsDevice.PresentationParameters.BackBufferWidth, "x") +
+                    Game1.GetSingleton().GraphicsDevice.PresentationParameters.BackBufferHeight + "\r\nFullscreen: " +
+                    (Game1.GetSingleton().graphics.IsFullScreen ? "true" : "false") + "\r\n Adapter: " +
+                    Game1.GetSingleton().GraphicsDevice.Adapter.Description + "\r\n Device Name: " +
+                    Game1.GetSingleton().GraphicsDevice.GraphicsDeviceStatus;
                 Utils.SendRealWorldEmail(
                     "Hackent " + OSVersion + " Crash " + DateTime.Now.ToShortDateString() + " " +
                     DateTime.Now.ToShortTimeString(), "hacknetbugs+Hacknet@gmail.com", body);
@@ -331,7 +330,7 @@ namespace Hacknet
                 return;
             MusicManager.stop();
             Game1.threadsExiting = true;
-            Game1.getSingleton().Exit();
+            Game1.GetSingleton().Exit();
         }
 
         private void drawTestingMainMenuButtons(bool canRun)
@@ -371,7 +370,7 @@ namespace Hacknet
                 var os2 = new OS();
                 ScreenManager.AddScreen(os2, ScreenManager.controllingPlayer);
                 MissionFunctions.runCommand(0, "EntropyFastFowardSetup");
-                os2.delayer.Post(ActionDelayer.Wait(1.0), () => Game1.getSingleton().IsMouseVisible = true);
+                os2.delayer.Post(ActionDelayer.Wait(1.0), () => Game1.GetSingleton().IsMouseVisible = true);
             }
             if (Button.doButton(8806, 634, 250, 225, 23, "Run Test Suite", buttonColor))
                 testSuiteResult = TestSuite.TestSaveLoadOnFile(ScreenManager);
@@ -407,7 +406,7 @@ namespace Hacknet
                 var os2 = new OS();
                 ScreenManager.AddScreen(os2, ScreenManager.controllingPlayer);
                 MissionFunctions.runCommand(0, "CSECFastFowardSetup");
-                os2.delayer.Post(ActionDelayer.Wait(1.0), () => Game1.getSingleton().IsMouseVisible = true);
+                os2.delayer.Post(ActionDelayer.Wait(1.0), () => Game1.GetSingleton().IsMouseVisible = true);
             }
             if (testSuiteResult == null)
                 return;
@@ -477,7 +476,7 @@ namespace Hacknet
             {
                 MusicManager.stop();
                 Game1.threadsExiting = true;
-                Game1.getSingleton().Exit();
+                Game1.GetSingleton().Exit();
             }
             var num7 = y + 30;
             if (!PlatformAPISettings.RemoteStorageRunning)

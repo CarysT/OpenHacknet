@@ -68,11 +68,11 @@ namespace Hacknet
             os.topBarColor = os.defaultTopBarColor;
             os.exeModuleTopBar = new Color(32, 22, 40, 80);
             os.exeModuleTitleText = new Color(91, 132, 207, 0);
-            os.netmapToolTipColor = new Color(213, 245, byte.MaxValue, 0);
+            os.netmapToolTipColor = new Color((byte)213, (byte)245, byte.MaxValue, (byte)0);
             os.netmapToolTipBackground = new Color(0, 0, 0, 70);
             os.displayModuleExtraLayerBackingColor = new Color(0, 0, 0, 60);
             os.thisComputerNode = new Color(95, 220, 83);
-            os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, 15);
+            os.scanlinesColor = new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, (byte)15);
         }
     }
 }

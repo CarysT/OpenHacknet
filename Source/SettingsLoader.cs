@@ -55,13 +55,13 @@ namespace Hacknet
 
         public static void writeStatusFile()
         {
-            var graphicsDevice = Game1.getSingleton().GraphicsDevice;
+            var graphicsDevice = Game1.GetSingleton().GraphicsDevice;
             Utils.writeToFile(
                 string.Concat(
                     string.Concat(
                         (graphicsDevice.PresentationParameters.BackBufferWidth.ToString() + "\r\n" +
                          graphicsDevice.PresentationParameters.BackBufferHeight + "\r\n" +
-                         (Game1.getSingleton().graphics.IsFullScreen ? "true" : "false") + "\r\n" + "bloom: " +
+                         (Game1.GetSingleton().graphics.IsFullScreen ? "true" : "false") + "\r\n" + "bloom: " +
                          (PostProcessor.bloomEnabled ? "true" : "false") + "\r\n" + "scanlines: " +
                          (PostProcessor.scanlinesEnabled ? "true" : "false") + "\r\n" + "muted: " +
                          (MusicManager.isMuted ? "true" : "false") + "\r\n"), "volume: ",

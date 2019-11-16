@@ -31,7 +31,7 @@ namespace Hacknet
         private PointClickerScreenState state;
         private readonly List<long> storyBeatChangers = new List<long>();
         private readonly List<string> storyBeats = new List<string>();
-        private readonly Color ThemeColor = new Color(133, 239, byte.MaxValue, 0);
+        private readonly Color ThemeColor = new Color((byte)133, (byte)239, byte.MaxValue, (byte)0);
         private readonly Color ThemeColorBacking = new Color(13, 59, 74, 250);
         private readonly Color ThemeColorHighlight = new Color(227, 0, 121, 200);
         private float timeSinceLastSave;
