@@ -1,4 +1,4 @@
-https://github.com/CarysT/OpenHacknet/workflows/CoreRun/badge.svg
+![](https://github.com/CarysT/OpenHacknet/workflows/CoreRun/badge.svg)
 # OpenHacknet
 
 OpenHacknet is a decompile of Hacknet, a game written in C# and XNA.
